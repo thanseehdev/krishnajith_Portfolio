@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #f3f4f4;
+  --color-brand-ink: #080b0f;
+  --color-brand-muted: #6c737c;
+  --color-brand-red: #ec160e;
+  --color-brand-panel: #0e1319;
+  --color-brand-line: #dfe3e7;
+  --font-sans: "Poppins", system-ui, sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #e9ebed;
+    color: var(--color-brand-ink);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+*:not(input):not(textarea) {
+  caret-color: transparent;
+}
+
+/* INPUT FIX */
+input, textarea {
+  caret-color: auto;
+}
