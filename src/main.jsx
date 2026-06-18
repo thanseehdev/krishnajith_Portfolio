@@ -115,51 +115,67 @@ function Header() {
 
 function Hero() {
   return (
-    <section className="relative h-[520px] min-[421px]:h-[min(620px,92vh)] md:h-[clamp(560px,70vh,700px)] rounded-[13px] md:rounded-[18px] overflow-hidden bg-[#cfd7d9]" id="top">
-      <img className="w-full h-full object-cover object-[center_20%] saturate-[1.02] contrast-[1.02]" src={img.hero} alt="Professional portrait placeholder" />
+    <section
+      className="relative h-[520px] min-[421px]:h-[min(620px,92vh)] md:h-[clamp(560px,70vh,700px)] rounded-[13px] md:rounded-[18px] overflow-hidden bg-[#cfd7d9]"
+      id="top"
+    >
+      {/* Background Image */}
+      <img
+        className="w-full h-full object-cover object-[center_20%] saturate-[1.02] contrast-[1.02]"
+        src={img.hero}
+        alt="Professional portrait"
+      />
+
+      {/* Overlay Gradient */}
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.05),rgba(0,0,0,0.08)_40%,rgba(255,255,255,0.5)_88%)] pointer-events-none" />
-      
+
+      {/* Bottom Fade (for readability 🔥) */}
+      <div className="absolute inset-x-0 bottom-0 h-[140px] bg-gradient-to-t from-black/70 to-transparent z-[5]" />
+
+      {/* Top Card */}
       <div className="absolute z-10 bg-white rounded-lg flex items-center gap-2.5 shadow-[0_20px_45px_rgba(0,0,0,0.1)] left-2.5 top-3.5 p-2 min-w-0 max-w-[calc(100%-20px)] min-[421px]:left-[14px] min-[421px]:top-[22px] min-[421px]:max-w-[calc(100%-28px)] md:left-[28px] md:top-[46px] md:p-[10px_13px] md:min-w-[220px]">
-        <div className="w-[32px] h-[32px] md:w-[38px] md:h-[38px] rounded-lg bg-brand-red grid place-items-center text-white font-extrabold">K</div>
+        <div className="w-[32px] h-[32px] md:w-[38px] md:h-[38px] rounded-lg bg-brand-red grid place-items-center text-white font-extrabold">
+          K
+        </div>
         <div>
-          <b className="text-[12px] block font-bold text-brand-ink">KRISHNAJITH KR</b>
-          <small className="text-[9px] text-[#777] block">Content creator</small>
+          <b className="text-[12px] block font-bold text-brand-ink">
+            KRISHNAJITH KR
+          </b>
+          <small className="text-[9px] text-[#777] block">
+            Content creator
+          </small>
         </div>
       </div>
-      
+
+      {/* Time */}
       <div className="absolute z-10 right-[34px] top-[60px] text-white hidden md:flex gap-[18px] text-[12px] leading-[1.1]">
-       
         <b>
-  {new Date().toLocaleTimeString("en-IN", {
-    timeZone: "Asia/Kolkata",
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: true,
-  })}
-  <br />
-  {new Date().toLocaleDateString("en-IN", {
-    timeZone: "Asia/Kolkata",
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  })}
-</b>
+          {new Date().toLocaleTimeString("en-IN", {
+            timeZone: "Asia/Kolkata",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true,
+          })}
+          <br />
+          {new Date().toLocaleDateString("en-IN", {
+            timeZone: "Asia/Kolkata",
+            day: "2-digit",
+            month: "short",
+            year: "numeric",
+          })}
+        </b>
       </div>
-      
-      <div className="absolute z-10 left-1/2 -translate-x-1/2 text-center text-white top-[49%] w-[min(88%,420px)] md:top-[45%] md:w-[min(530px,80%)]">
-        <p className="text-[12.5px] md:text-[14px] leading-[1.45] [text-shadow:0_4px_16px_rgba(0,0,0,0.35)] mb-4">
+
+      {/* ✅ TEXT NOW INSIDE IMAGE (BOTTOM) */}
+      <div className="absolute z-10 left-1/2 -translate-x-1/2 bottom-[20px] md:bottom-[40px] text-center text-white w-[min(88%,420px)] md:w-[min(530px,80%)] px-2">
+        <p className="text-[13px] md:text-[15px] leading-[1.5] mb-4 [text-shadow:0_4px_16px_rgba(0,0,0,0.5)]">
           Helping brands grow with storytelling, simple designs, and social media.
         </p>
-        <a className="inline-flex items-center gap-[5px] font-bold text-[13px] hover:underline transition-all" href="#projects">
-          View Projects <ArrowUpRight size={13}/>
-        </a>
+
+        
       </div>
-      
-      <h1 className="absolute z-20 left-1/2 -translate-x-1/2 text-center text-white font-montserrat font-black leading-[0.8] bottom-[-8px] md:bottom-[-54px] text-[clamp(54px,20vw,84px)] md:text-[clamp(76px,15vw,205px)] xl:text-[clamp(140px,15vw,230px)] tracking-[-5px] md:tracking-[-11px]">
-  Krishnajith
-</h1>
     </section>
-  )
+  );
 }
 
 function SocialBar() {
